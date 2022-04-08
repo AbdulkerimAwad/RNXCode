@@ -122,7 +122,7 @@
         type: "vanilla",
         color: "#80b300d7",
         link: "https://abdulkerimawad.github.io/Concomitant-Site/",
-        poster: "./Images/web-sites/Concomitant.png",
+        poster: "./Images/web-sites/Concomitant.webp",
         about:
           "This website is a portfolio site suitable for programmers, designers and artists",
       },
@@ -131,7 +131,7 @@
         type: "api",
         color: "#2bd1d1db",
         link: "https://abdulkerimawad.github.io/URL-Shortener/",
-        poster: "./Images/web-sites/Shortly.jpg",
+        poster: "./Images/web-sites/Shortly.webp",
         about: "This website is a links shortener tool",
       },
     ]
