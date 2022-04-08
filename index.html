@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href='./Images/r.png'>
+  <title>NXCode</title>
+  <!-- icons library -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <!-- main style file -->
+  <link rel="stylesheet" href="./Styles/style.css" />
+  <!-- En font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="page">
+    <div class="menu-open-btn" id="menu-open-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+    <header id="home">
+      <div class="container">
+        <div class="logo"><span>RNX</span>Code</div>
+        <div class="social-media" id="header-social-media">
+        </div>
+      </div>
+    </header>
+    <nav class="closed" id="nav">
+      <div class="container">
+        <ul class="mobil-list" id="mobil-list">
+          <li>Home</li>
+          <li>About</li>
+          <li>Skills</li>
+          <li>Services</li>
+          <li>Projects</li>
+          <li>Languages</li>
+          <li>Contact</li>
+        </ul>
+        <ul class="tab-list" id="nav-list">
+          <li>Home</li>
+          <li>About</li>
+          <li>Skills</li>
+          <li id="dropdown-btn">
+            More<i class="fas fas fa-angle-down"></i>
+            <ul class="more-items" id="dropdown">
+              <li>Services</li>
+              <li>Projects</li>
+              <li>Languages</li>
+              <li>Contact</li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="social-media" id="social-media">
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <div class="container">
+        <div class="slider" id="slider">
+          <!-- <img src="./Images/Slider/2.gif" alt=""> -->
+          <img src="./Images/Slider/two.jpg" alt="">
+          <img src="./Images/Slider/three.jpg" alt="">
+          <div class="polits" id="polits-cont"></div>
+        </div>
+      </div>
+    </main>
+    <section class="about-me" id="about">
+      <div class="container">
+        <div class="my-image">
+          <div class="image">
+            <img src='./Images/profile.jpg' alt='Avatar'>
+            <p>Abdulkerim Awad</p>
+          </div>
+        </div>
+        <div class="info">
+          <p><i class="fas fa-briefcase"></i><span>Front End Dev</span></p>
+          <p><i class="fas fa-home"></i><span>Turkey, Kayseri</span></p>
+          <p><i class="fas far fa-envelope"></i><span>kareem.vergil@gmail.com</span></p>
+          <p><i class="fas fas fa-phone-alt"></i><span>+905527137800</span></p>
+        </div>
+      </div>
+    </section>
+    <section class="skills" id="skills">
+      <div class="container">
+        <h2>My Skills</h2>
+        <div class="time-line">
+          <div class="skill html5">
+            <span>HTML5</span>
+          </div>
+          <div class="skill">
+            <span>Css3</span>
+          </div>
+          <div class="skill">
+            <span>JavaScript</span>
+          </div>
+          <div class="skill">
+            <span>Sass</span>
+          </div>
+          <div class="skill">
+            <span>Github</span>
+          </div>
+          <div class="skill">
+            <span>Json/Ajax</span>
+          </div>
+          <div class="skill">
+            <span>React</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="services" id="services">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="sers">
+          <div class="service one">
+            <div></div>
+            <h3>PSD 2 HTML</h3>
+            <p>
+              Convert any Psd image to code using the best and fastest technology such as HTML 5, SASS and Javascript.
+            </p>
+          </div>
+          <div class="service two">
+            <div></div>
+            <h3>Fixing</h3>
+            <p>
+              Solve problems related to website design and javascript
+            </p>
+          </div>
+          <div class="service three">
+            <div></div>
+            <h3>Editing</h3>
+            <p>
+              Modify any website built with HTML, CSS or SASS and JavaScript or React.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="projects-block">
+          <div class="tabs" id="projects-tabs">
+            <span class="active">Vanilla JS</span>
+            <span>React</span>
+            <span>Api</span>
+          </div>
+          <div class="content" id="projects-contents">
+            <div class="vanillaJs active" id="vanillaJS-projects"></div>
+            <div class="react" id="react-projects"></div>
+            <div class="api" id="api-projects"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="languages" id="languages">
+      <div class="container">
+        <h2>Languages</h2>
+        <div class="items">
+          <p class="arabic">
+            Arabic (Native)
+          </p>
+          <p class="turkish">
+            Turkish (Advanced)
+          </p>
+          <p class="english">
+            English (good)
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="contact-us" id="contact">
+      <div class="container">
+        <h2>Contact us</h2>
+        <div class="mail">
+          <form>
+            <label for="name">Name</label>
+            <input type="text" id="name">
+            <label for="email">Email</label>
+            <input type="text" id="email">
+            <label for="message">Your Message</label>
+            <textarea type="text" id="message"></textarea>
+            <input type="submit" value="Send">
+          </form>
+        </div>
+        <div class="social-media" id="contact-media"></div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <p>Created With <i class="fas far fas fa-heart"></i> By Abdulkerim Awad</p>
+        <p>&copy; <span id="copy-right"></span> RNXCode All Rights Reserved</p>
+      </div>
+    </footer>
+  </div>
+  <script src="./Scripts/main.js"></script>
+</body>
+
+</html>
