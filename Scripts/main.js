@@ -1,126 +1,105 @@
-(function navFunctions() {
-  let openMenuBtn = document.getElementById("menu-open-btn"),
-    navBar = document.getElementById("nav");
+/* ------------------------------ nav function ------------------------------ */
 
-  openMenuBtn.addEventListener("click", function () {
-    navBar.classList.toggle("closed");
+const openMenuBtn = document.getElementById("menu-open-btn");
 
-    this.children[0].classList.toggle("fa-times");
-  });
+openMenuBtn.addEventListener("click", function () {
+  openTheMenu(this);
+});
 
-  let mobilNavItems = Array.from(
-    document.getElementById("mobil-list").children
-  );
+function openTheMenu(btn) {
+  document.getElementById("nav").classList.toggle("closed");
+  btn.children[0].classList.toggle("fa-times");
+}
 
-  mobilNavItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      location.href = `#${item.textContent.toLowerCase()}`;
+document.getElementById("nav").addEventListener("click", (e) => {
+  goToTheChosenSection(e.target);
+});
 
+function goToTheChosenSection(target) {
+  if (target.classList.contains("nav-item")) {
+    location.href = `#${target.textContent.toLowerCase()}`;
+    if (target.parentElement.classList.contains("mobile-list")) {
       openMenuBtn.click();
-    });
-  });
+    }
+  }
+}
 
-  let NavItems = Array.from(document.getElementById("nav-list").children);
-
-  NavItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      if (item.childNodes[0].nodeValue.trim() != "More") {
-        location.href = `#${item.textContent.toLowerCase()}`;
-      }
-    });
-  });
-
-  let dropdownChildren = Array.from(
-    document.getElementById("dropdown").children
-  );
-
-  dropdownChildren.forEach((child) => {
-    child.addEventListener("click", () => {
-      location.href = `#${child.textContent.toLowerCase()}`;
-    });
-  });
-
-  let socialMedia = [
+(function creatTheSocialMediaBtns() {
+  let socialMediaData = [
     {
       class: "fab fa-linkedin",
-      url: "https://www.linkedin.com/in/abdulkerim-awad-92652321a/",
+      link: "https://www.linkedin.com/in/abdulkerim-awad-92652321a/",
     },
     {
       class: "fab fa-facebook-square",
-      url: "https://www.facebook.com/RNXCode",
+      link: "https://www.facebook.com/RNXCode",
     },
-    { class: "fab fa-github-square", url: "https://github.com/AbdulkerimAwad" },
+    {
+      class: "fab fa-github-square",
+      link: "https://github.com/AbdulkerimAwad",
+    },
   ];
 
-  let socialMediaCont = document.getElementById("social-media"),
-    headerSocialMediaCont = document.getElementById("header-social-media");
+  let mobileSocialMediaCont = document.getElementById("mobile-social-media"),
+    headerSocialMediaCont = document.getElementById("header-social-media"),
+    i;
 
-  socialMedia.forEach((i) => {
-    let item = document.createElement("i");
-    item.className = i.class;
+  socialMediaData.forEach((d) => {
+    for (i = 0; i < 2; i++) {
+      let item = document.createElement("i");
+      item.className = d.class;
 
-    item.addEventListener("click", () => {
-      window.open(i.url);
-    });
+      item.addEventListener("click", () => {
+        window.open(d.link);
+      });
 
-    socialMediaCont.appendChild(item);
-  });
-
-  socialMedia.forEach((i) => {
-    let item = document.createElement("i");
-    item.className = i.class;
-
-    item.addEventListener("click", () => {
-      window.open(i.url);
-    });
-
-    headerSocialMediaCont.appendChild(item);
+      i < 1
+        ? mobileSocialMediaCont.appendChild(item)
+        : headerSocialMediaCont.appendChild(item);
+    }
   });
 })();
-(function sliderFunction() {
-  let images = Array.from(document.getElementById("slider").children),
-    politsCont = document.getElementById("polits-cont");
 
-  for (let i = 0; i < images.length - 1; i++) {
+/* ----------------------------- slider function ---------------------------- */
+(function creatSliderFunctionality() {
+  let images = [...document.querySelectorAll("#slider img")],
+    politsCont = document.getElementById("polits-cont"),
+    i;
+
+  for (i = 0; i < images.length; i++) {
     let polit = document.createElement("div");
-
     polit.className = "polit";
-
+    i < 1 ? polit.classList.add("active") : null;
     politsCont.appendChild(polit);
   }
 
-  let polits = Array.from(politsCont.children);
-
-  polits[0].classList.add("active");
   images[0].classList.add("active");
 
-  let i = 0;
-
-  polits.forEach((polit, ind) => {
-    polit.addEventListener("click", () => {
-      images.forEach((image) => {
-        image.classList.remove("active");
-      });
-
-      polits.forEach((polit) => {
+  politsCont.addEventListener("click", (e) => {
+    if (e.target.classList.contains("polit")) {
+      [...e.target.parentElement.children].forEach((polit, index) => {
         polit.classList.remove("active");
+        images[index].classList.remove("active");
       });
 
-      images[ind].classList.add("active");
-      polits[ind].classList.add("active");
-      i = ind;
-    });
+      e.target.classList.add("active");
+      images[[...politsCont.children].indexOf(e.target)].classList.add(
+        "active"
+      );
+    }
   });
 })();
-(function projectsFunction() {
+
+/* ---------------------------- projects function  --------------------------- */
+(function showTheCurrentProjects() {
   let staticProjContainer = document.getElementById("vanillaJS-projects"),
     reactProjContainer = document.getElementById("react-projects"),
     apiProjContainer = document.getElementById("api-projects"),
     projects = [
       {
         name: "Concomitant",
-        type: "vanilla",
-        color: "#80b300d7",
+        type: "vanillaJs",
+        color: "#80b300",
         link: "https://abdulkerimawad.github.io/Concomitant-Site/",
         poster: "./Images/web-sites/Concomitant.webp",
         about:
@@ -129,22 +108,25 @@
       {
         name: "Shortly",
         type: "api",
-        color: "#2bd1d1db",
+        color: "#2bd1d1",
         link: "https://abdulkerimawad.github.io/URL-Shortener/",
         poster: "./Images/web-sites/Shortly.webp",
         about: "This website is a links shortener tool",
       },
-    ]
+    ];
 
   for (const project of projects) {
     let proj = document.createElement("div"),
-      after = document.createElement("div"),
+      pInfo = document.createElement("div"),
       pName = document.createElement("p"),
-      goBtn = document.createElement("p"),
-      about = document.createElement("p");
+      about = document.createElement("p"),
+      goBtn = document.createElement("a");
 
     proj.id = project.name;
     proj.style.backgroundImage = `url(${project.poster})`;
+
+    pInfo.className = "info";
+    pInfo.style.backgroundColor = project.color;
 
     pName.textContent = project.name;
     pName.className = "name";
@@ -152,23 +134,17 @@
     about.textContent = project.about;
     about.className = "about";
 
-    after.className = "info";
-    after.style.backgroundColor = project.color;
-
     goBtn.textContent = "Go Site";
-    goBtn.className = "btn";
-    
-    goBtn.addEventListener("click", () => {
-      window.open(project.link, "blank");
-    });
+    goBtn.href = project.link;
+    goBtn.setAttribute("target", "_blank");
 
-    after.appendChild(pName);
-    after.appendChild(about);
-    after.appendChild(goBtn);
+    pInfo.appendChild(pName);
+    pInfo.appendChild(about);
+    pInfo.appendChild(goBtn);
 
-    proj.appendChild(after);
+    proj.appendChild(pInfo);
 
-    if (project.type == "vanilla") {
+    if (project.type == "vanillaJs") {
       staticProjContainer.appendChild(proj);
     } else if (project.type == "react") {
       reactProjContainer.appendChild(proj);
@@ -177,29 +153,26 @@
     }
   }
 
-  let projectsTabs = Array.from(
-      document.getElementById("projects-tabs").children
-    ),
-    projectsContents = Array.from(
-      document.getElementById("projects-contents").children
-    );
+  let projectsTabsCont = document.getElementById("projects-tabs"),
+    projectsCont = document.getElementById("projects-contents");
 
-  projectsTabs.forEach((tab, ind) => {
-    tab.addEventListener("click", () => {
-      projectsTabs.forEach((tab) => {
+  projectsTabsCont.addEventListener("click", (e) => {
+    if (e.target.classList.contains("tab")) {
+      [...e.target.parentElement.children].forEach((tab, index) => {
         tab.classList.remove("active");
+        projectsCont.children[index].classList.remove("active");
       });
 
-      projectsContents.forEach((content) => {
-        content.classList.remove("active");
-      });
+      e.target.classList.add("active");
 
-      projectsTabs[ind].classList.add("active");
-      projectsContents[ind].classList.add("active");
-    });
+      projectsCont.children[
+        [...projectsTabsCont.children].indexOf(e.target)
+      ].classList.add("active");
+    }
   });
 })();
-(function contactFunction() {
+
+(function creatContactsFunctionality() {
   let contactMedias = [
     {
       class: "fab fa-facebook-messenger",
@@ -209,7 +182,7 @@
       class: "fab fa-whatsapp",
       url: "https://api.whatsapp.com/send?phone=+905527137800",
     },
-    { class: "fab fa-telegram", url: "" },
+    { class: "fab fa-telegram", url: "https://t.me/AbdulkerimAwad" },
   ];
 
   let contactMediasCont = document.getElementById("contact-media");
@@ -226,9 +199,11 @@
     contactMediasCont.appendChild(item);
   });
 })();
-(function footerFunction() {
-  let copyRight = document.getElementById("copy-right"),
-    now = new Date();
 
-  copyRight.textContent = now.getFullYear();
+/* ---------------------------- footer functions ---------------------------- */
+(function setTheCopyRightYears() {
+  let copyRight = document.getElementById("copy-right"),
+    currentYear = new Date();
+
+  copyRight.textContent = `2021-${currentYear.getFullYear()}`;
 })();
