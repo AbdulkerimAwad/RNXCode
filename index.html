@@ -4,12 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href='./Images/r.webp'>
-  <title>NXCode</title>
+  <link rel="icon" href='./Images/logo-35x31.webp'>
+  <title>RNXCode</title>
   <!-- icons library -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <script src="https://kit.fontawesome.com/a85ef4a7c1.js" crossorigin="anonymous"></script>
   <!-- main style file -->
   <link rel="stylesheet" href="./Styles/style.css" />
   <!-- En font -->
@@ -21,69 +19,121 @@
 
 <body>
   <div class="page">
+    <div class="loader" id="loader">
+      <div class="squer1">
+        <div class="squer2">
+        </div>
+      </div>
+      <div class="loading">
+        loading...
+      </div>
+    </div>
     <div class="menu-open-btn" id="menu-open-btn">
-      <i class="fas fa-bars"></i>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
     <header id="home">
       <div class="container">
-        <div class="logo"><span>RNX</span>Code</div>
+        <div class="logo"><img src="./Images/logo-60x53.webp" alt=""><span>RNX</span>Code</div>
         <div class="social-media" id="header-social-media">
+          <a href="https://www.linkedin.com/in/abdulkerim-awad-92652321a/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://www.facebook.com/RNXCode" target="_blank">
+            <i class="fab fa-facebook-square"></i>
+          </a>
+          <a href="https://github.com/AbdulkerimAwad" target="_blank">
+            <i class="fab fa-github-square"></i>
+          </a>
         </div>
       </div>
+      <nav class="closed" id="nav">
+        <div class="container">
+          <ul class="mobile-list" id="mobile-list">
+            <li class="nav-item">Home</li>
+            <li class="nav-item">About</li>
+            <li class="nav-item">Skills</li>
+            <li class="nav-item">Statistics</li>
+            <li class="nav-item">Projects</li>
+            <li class="nav-item">Languages</li>
+            <li class="nav-item">Contact</li>
+          </ul>
+          <ul class="tab-list" id="nav-list">
+            <li class="nav-item">Home</li>
+            <li class="nav-item">About</li>
+            <li class="nav-item">Skills</li>
+            <li class="dropdown" id="dropdown-btn">
+              More<i class="fas fas fa-angle-down"></i>
+              <ul class="more-items" id="dropdown">
+                <li class="nav-item">Statistics</li>
+                <li class="nav-item">Projects</li>
+                <li class="nav-item">Languages</li>
+                <li class="nav-item">Contact</li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="social-media" id="mobile-social-media">
+            <li>
+              <a href="https://www.linkedin.com/in/abdulkerim-awad-92652321a/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/RNXCode" target="_blank">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/AbdulkerimAwad" target="_blank">
+                <i class="fab fa-github-square"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
-    <nav class="closed" id="nav">
-      <div class="container">
-        <ul class="mobile-list" id="mobile-list">
-          <li class="nav-item">Home</li>
-          <li class="nav-item">About</li>
-          <li class="nav-item">Skills</li>
-          <li class="nav-item">Services</li>
-          <li class="nav-item">Projects</li>
-          <li class="nav-item">Languages</li>
-          <li class="nav-item">Contact</li>
-        </ul>
-        <ul class="tab-list" id="nav-list">
-          <li class="nav-item">Home</li>
-          <li class="nav-item">About</li>
-          <li class="nav-item">Skills</li>
-          <li id="dropdown-btn">
-            More<i class="fas fas fa-angle-down"></i>
-            <ul class="more-items" id="dropdown">
-              <li class="nav-item">Services</li>
-              <li class="nav-item">Projects</li>
-              <li class="nav-item">Languages</li>
-              <li class="nav-item">Contact</li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="social-media" id="mobile-social-media">
-        </ul>
-      </div>
-    </nav>
     <main>
       <div class="container">
         <div class="slider" id="slider">
-          <!-- <img src="./Images/Slider/2.gif" alt=""> -->
-          <img src="./Images/Slider/one.webp" alt="">
-          <img src="./Images/Slider/two.webp" alt="">
-          <img src="./Images/Slider/three.webp" alt="">
-          <div class="polits" id="polits-cont"></div>
+          <div class="slite">
+            <h2>PSD 2 HTML</h2>
+            <p>
+              Convert any PSD image to code using the best and fastest technology such as HTML5, SASS, Bootstrap, and Javascript.
+            </p>
+          </div>
+          <div class="slite">
+            <h2>Fixing</h2>
+            <p>
+              Fixing any problem related to website design, structure, and javascript.
+            </p>
+          </div>
+          <div class="slite">
+            <h2>Modifying</h2>
+            <p>
+              Modifying any part of the website you want that built by HTML, CSS or SASS, Bootstrap, and JavaScript.
+            </p>
+          </div>
+          <div class="bullets" id="bullets-cont"></div>
         </div>
       </div>
     </main>
     <section class="about-me" id="about">
       <div class="container">
         <div class="my-image">
-          <div class="image">
-            <img src='./Images/profile.webp' alt='Avatar'>
-            <p>Abdulkerim Awad</p>
+          <div class="frame">
+            <div class="image">
+              <img src='./Images/profile.webp' alt='Avatar'>
+              <p>Abdulkerim Awad</p>
+            </div>
           </div>
         </div>
         <div class="info">
-          <p><i class="fas fa-briefcase"></i><span>Front End Dev</span></p>
-          <p><i class="fas fa-home"></i><span>Turkey, Kayseri</span></p>
-          <p><i class="fas far fa-envelope"></i><span>kareem.vergil@gmail.com</span></p>
-          <p><i class="fas fas fa-phone-alt"></i><span>+905527137800</span></p>
+          <span><i class="fas fa-briefcase"></i><span>Front End Developer</span></span>
+          <span><i class="fas fa-home"></i><span>Turkey, Kayseri</span></span>
+          <span><i class="fas far fa-envelope"></i><span>kareem.vergil@gmail.com</span></span>
+          <span><i class="fas fas fa-phone-alt"></i><span>+90(552)713-78-00</span></span>
+          <span><i class="fas fas fa-paperclip"></i><span><a href='./Abdulkerim_Awad.pdf' download target="_blank">Download CV</a></span></span>
         </div>
       </div>
     </section>
@@ -104,40 +154,40 @@
             <span>Sass</span>
           </div>
           <div class="skill">
+            <span>Bootstrap</span>
+          </div>
+          <div class="skill">
             <span>Github</span>
           </div>
           <div class="skill">
-            <span>Json/Ajax</span>
-          </div>
-          <div class="skill">
-            <span>React</span>
+            <span>Json</span>
           </div>
         </div>
       </div>
     </section>
-    <section class="services" id="services">
+    <section class="statistics" id="statistics">
       <div class="container">
-        <h2>Services</h2>
-        <div class="sers">
-          <div class="service one">
+        <h2>Our Statistics</h2>
+        <div class="stats">
+          <div class="statistic one">
             <div></div>
-            <h3>PSD 2 HTML</h3>
-            <p>
-              Convert any Psd image to code using the best and fastest technology such as HTML 5, SASS and Javascript.
+            <h3>Cup of Coffee</h3>
+            <p data-goal="15">
+              0
             </p>
           </div>
-          <div class="service two">
+          <div class="statistic two">
             <div></div>
-            <h3>Fixing</h3>
-            <p>
-              Solve problems related to website design and javascript
+            <h3>Projects</h3>
+            <p data-goal="7">
+              0
             </p>
           </div>
-          <div class="service three">
+          <div class="statistic three">
             <div></div>
-            <h3>Editing</h3>
-            <p>
-              Modify any website built with HTML, CSS or SASS and JavaScript or React.
+            <h3>Clients</h3>
+            <p data-goal="1">
+              0
             </p>
           </div>
         </div>
@@ -148,13 +198,13 @@
         <div class="projects-block">
           <div class="tabs" id="projects-tabs">
             <span class="tab active">Vanilla JS</span>
-            <span class="tab">React</span>
+            <span class="tab">Bootstrap</span>
             <span class="tab">Api</span>
           </div>
           <div class="content" id="projects-contents">
-            <div class="vanillaJs active" id="vanillaJS-projects"></div>
-            <div class="react" id="react-projects"></div>
-            <div class="api" id="api-projects"></div>
+            <div class="category vanillaJs active" id="vanillaJS-projects"></div>
+            <div class="category bootstrap" id="bootstrap-projects"></div>
+            <div class="category api" id="api-projects"></div>
           </div>
         </div>
       </div>
@@ -166,11 +216,11 @@
           <p class="arabic">
             Arabic (Native)
           </p>
+          <p class="english">
+            English (intermediate)
+          </p>
           <p class="turkish">
             Turkish (Advanced)
-          </p>
-          <p class="english">
-            English (good)
           </p>
         </div>
       </div>
@@ -181,15 +231,25 @@
         <div class="mail">
           <form>
             <label for="name">Name</label>
-            <input type="text" id="name" required>
+            <input disabled type="text" id="name" required>
             <label for="email">Email</label>
-            <input type="email" id="email" required>
+            <input disabled type="email" id="email" required>
             <label for="message">Your Message</label>
-            <textarea type="text" id="message"required></textarea>
-            <input type="submit" value="Send">
+            <textarea disabled type="text" id="message" required></textarea>
+            <input disabled type="submit" value="Send">
           </form>
         </div>
-        <div class="social-media" id="contact-media"></div>
+        <div class="social-media" id="contact-media">
+          <a href="https://www.facebook.com/messages/t/100006729790359" target="_blank">
+            <i class="fab fa-facebook-messenger"></i>
+          </a>
+          <a href="https://wa.me/+905527137800" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://t.me/AbdulkerimAwad" target="_blank">
+            <i class="fab fa-telegram"></i>
+          </a>
+        </div>
       </div>
     </section>
     <footer>
@@ -199,7 +259,7 @@
       </div>
     </footer>
   </div>
-  <script src="./Scripts/main.js"></script>
+  <script src="./Scripts/main-min.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,10 @@
 Styles/sections/
 Styles/style.scss
+Styles/style.css.map
+Scripts/main.js
+Scripts/main-min.js.map
+my-tasks.md
 Images/Slider/1.gif
 Images/Slider/2.gif
 Images/Slider/3.gif
+prepros.config
